@@ -16,7 +16,10 @@ highlight CursorColumn cterm=NONE ctermbg=black ctermfg=NONE guibg=NONE guifg=NO
 set cmdheight=2
 set updatetime=2
 set mouse=a
+
 inoremap jk <ESC>
+inoremap kj <ESC>
+
 let mapleader="\<Space>"
 " move to the head or tail of a line
 map H ^ 
