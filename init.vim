@@ -18,7 +18,7 @@ set updatetime=2
 set mouse=a
 
 inoremap jk <ESC>
-inoremap kj <ESC>
+" inoremap kj <ESC>
 
 let mapleader="\<Space>"
 " move to the head or tail of a line
@@ -30,12 +30,15 @@ nnoremap <leader>] :bn<CR>
 nnoremap <C-a> ggVG
 
 " move window
-nnoremap <C-l> <C-w>l
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
+nnoremap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
 
 nnoremap <C-n> :noh<CR>
+
+"vmap <leader>c "+y<CR>
+"nnoremap <leader>v "+p<CR>
 
 call plug#begin('~/.vim/plugged')
 
@@ -43,6 +46,8 @@ call plug#begin('~/.vim/plugged')
 " need to install node.js  and npm : node.js version
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" GUI enhancements
+" Plug 'itchyny/lightline.vim'
 " 美化界面
 " grubox isnot for ssh
 Plug 'morhetz/gruvbox'
@@ -219,7 +224,7 @@ command! -bang -nargs=* Rg
 "easymotion
 nmap <leader>e <Plug>(easymotion-s2)
 
-"neomake
+" neomake
 call neomake#configure#automake('nrwi', 500)
 
 let g:neomake_highlight_columns=0
@@ -235,3 +240,4 @@ let g:neomake_highlight_lines=0
 
 "vim-clang-format
 nnoremap <leader>f :ClangFormat<CR>
+
