@@ -16,21 +16,26 @@ highlight CursorColumn cterm=NONE ctermbg=black ctermfg=NONE guibg=NONE guifg=NO
 set cmdheight=2
 set updatetime=2
 set mouse=a
-
+" map ; :
 inoremap jk <ESC>
 " inoremap kj <ESC>
 
 let mapleader="\<Space>"
 " move to the head or tail of a line
-map H ^ 
+map H ^
 map L $
+map G Gzz
 " buffer change
 nnoremap <leader>[ :bp<CR>
 nnoremap <leader>] :bn<CR>
 nnoremap <C-a> ggVG
-
+" nnoremap <C-s> :w<CR>
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q<CR>
+nnoremap <leader>+ :e ~/.config/nvim/init.vim<CR>
+noremap <leader>m `
 " move window
-nnoremap <c-l> <c-w>l
+noremap <c-l> <c-w>l
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
@@ -51,6 +56,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " 美化界面
 " grubox isnot for ssh
 Plug 'morhetz/gruvbox'
+Plug 'blueshirts/darcula'
 Plug 'altercation/vim-colors-solarized'
 Plug 'sickill/vim-monokai'
 Plug 'joshdick/onedark.vim'
@@ -109,15 +115,20 @@ Plug 'rhysd/vim-clang-format'
 
 "buffer only
 Plug 'vim-scripts/BufOnly.vim'
+
+" 
+" Plug 'skywind3000/vim-keysound'
+
 call plug#end()
 
 "scheme
 set t_Co=256 
 
-colorscheme gruvbox
+colorscheme darcula
+" colorscheme gruvbox
 "colorscheme solarized
 "colorscheme monokai
-"colorscheme onedark
+" colorscheme onedark
 set background=dark
 
 "nerdtree
@@ -149,8 +160,8 @@ endfunction
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 nmap <silent> gd <Plug>(coc-definition)
-"nmap <silent> gy <Plug>(coc-type-definition)
-"nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <leader>rn <Plug>(coc-rename)
 autocmd CursorHold * silent call CocActionAsync('highlight')
@@ -205,7 +216,8 @@ let g:rustfmt_autosave=1
 
 "fzf
 map <C-p> :Files<CR>
-noremap <leader>m :Marks<CR>
+" noremap <leader>m :Marks<CR>
+noremap <C-m> :Marks<CR>
 "noremap <leader>; :Buffers<CR>
 
 "need to  install ripgrep
@@ -241,3 +253,8 @@ let g:neomake_highlight_lines=0
 "vim-clang-format
 nnoremap <leader>f :ClangFormat<CR>
 
+nnoremap <leader>b :BufOnly<CR>
+
+" vim-keysound
+" let g:keysound_enable = 1
+" let g:keysound_theme = 'default'

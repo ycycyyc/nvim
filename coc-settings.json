@@ -1,4 +1,9 @@
 {
-  "rust-analyzer.cargo-watch.enable": true,
-  "rust-analyzer.serverPath": "~/.cargo/bin/rust-analyzer-linux"
+	"languageserver": {
+		"rust": {
+			"command": "rust-analyzer",
+			"filetypes": ["rust"],
+			"rootPatterns": ["Cargo.toml"]
+		}
+	}
 }
